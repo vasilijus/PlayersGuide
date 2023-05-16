@@ -25,6 +25,10 @@ class Program {
                 Console.WriteLine("App 3");
                 BuyingInventory.Init();
                 break;
+            case 4:
+                Console.WriteLine("App 3");
+                MagicCannon.Init();
+                break;
                 
             default:
                 Console.WriteLine("Exiting...");
