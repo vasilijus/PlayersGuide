@@ -16,9 +16,14 @@ class Program {
                 GridProtect.Init();
                 break;
             
-            case 3:
+            case 2:
                 Console.WriteLine("App 2");
                 EvenOrOdd.Init();
+                break;
+                
+            case 3:
+                Console.WriteLine("App 3");
+                BuyingInventory.Init();
                 break;
                 
             default:
