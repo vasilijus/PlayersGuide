@@ -9,17 +9,21 @@ class Program {
         Console.WriteLine("\n ");
         int selection = Convert.ToInt32(Console.ReadLine());
 
-        if (selection == 1) 
+        switch (selection)
         {
-            GridProtect.Init();    
+            case 1:
+                Console.WriteLine("App 1");
+                GridProtect.Init();
+                break;
+            
+            case 3:
+                Console.WriteLine("App 2");
+                EvenOrOdd.Init();
+                break;
+                
+            default:
+                Console.WriteLine("Exiting...");
+                break;
         } 
-        else if(selection == 2) 
-        {
-            EvenOrOdd.Init();
-        } 
-        else 
-        {
-            Console.WriteLine("No ");
-        }
     }
 }
