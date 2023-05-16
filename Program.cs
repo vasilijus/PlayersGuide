@@ -26,8 +26,12 @@ class Program {
                 BuyingInventory.Init();
                 break;
             case 4:
-                Console.WriteLine("App 3");
-                MagicCannon.Init();
+                Console.WriteLine("App 4");
+                BuyingInventory.Init();
+                break;
+            case 5:
+                Console.WriteLine("App 5");
+                ReplicatorOfDto.Init();
                 break;
                 
             default:
