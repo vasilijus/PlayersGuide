@@ -24,5 +24,21 @@ class ReplicatorOfDto
         foreach(var item in copynums) {
             Console.Write($"{item}. ");
         }
+        int[][] matrix = new int[3][];
+        matrix[0] = new int[] {1,2};
+        Console.WriteLine();
+        Console.WriteLine(matrix[0][1]);
+
+        int[,] box = new int[4,4];
+        for (int row = 0; row < box.GetLength(0); row++)
+        {
+            for (int col = 0; col < box.GetLength(1); col++)
+            {
+                Console.Write( box[row,col] + " ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+        Console.WriteLine(matrix[0][1]);
     }
 }
