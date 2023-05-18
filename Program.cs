@@ -33,6 +33,14 @@ class Program {
                 Console.WriteLine("App 5");
                 ReplicatorOfDto.Init();
                 break;
+            case 6:
+                Console.WriteLine("App 6");
+                TakingANumber.Start();
+                break;
+            case 7:
+                Console.WriteLine("App 7");
+                Countdown.Init();
+                break;
                 
             default:
                 Console.WriteLine("Exiting...");
