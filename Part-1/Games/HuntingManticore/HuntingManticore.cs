@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace App1.Games.ManticoreHunt;
+namespace App1.Part_1.Games.ManticoreHunt;
 
 class HuntingManticore
 {
@@ -65,17 +65,16 @@ class HuntingManticore
             if(shot == manticoreDistance) 
                 manticoreLife -= damage;
 
-            if(cityLife == 0)
-                StillPlaying = false;
             if(manticoreLife == 0) {
                 GameWon = true;
                 StillPlaying = false;
             }
 
-            if(manticoreLife>0) {
-                round++;
-                cityLife--;
-            }
+            round++;
+            cityLife--;
+            
+            if(cityLife == 0)
+                StillPlaying = false;
         }
 
 

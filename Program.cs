@@ -1,6 +1,6 @@
 ﻿using System;
-using App1.Progi;
-using App1.Games;
+using App1.Part_1.Progi;
+using App1.Part_1.Games.ManticoreHunt;
 namespace App1;
 
 class Program {
@@ -14,12 +14,12 @@ class Program {
         {
             case 1:
                 Console.WriteLine("App 1");
-                GridProtect.Init();
+                // GridProtect.Init();
                 break;
             
             case 2:
                 Console.WriteLine("App 2");
-                EvenOrOdd.Init();
+                // EvenOrOdd.Init();
                 break;
                 
             case 3:
@@ -32,7 +32,7 @@ class Program {
                 break;
             case 5:
                 Console.WriteLine("App 5");
-                ReplicatorOfDto.Init();
+                // ReplicatorOfDto.Init();
                 break;
             case 6:
                 Console.WriteLine("App 6");
@@ -40,11 +40,11 @@ class Program {
                 break;
             case 7:
                 Console.WriteLine("App 7");
-                Countdown.Init();
+                // Countdown.Init();
                 break;
             case 8:
                 Console.WriteLine("App 8");
-                Games.ManticoreHunt.HuntingManticore.Init();
+                HuntingManticore.Init();
                 break;
                 
             default:

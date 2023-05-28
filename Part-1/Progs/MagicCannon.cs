@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace App1.Progi;
+namespace App1.Part_1.Progi;
 class MagicCannon
 {
     public static void Init() {
