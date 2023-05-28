@@ -1,5 +1,6 @@
 ﻿using System;
 using App1.Progi;
+using App1.Games;
 namespace App1;
 
 class Program {
@@ -40,6 +41,10 @@ class Program {
             case 7:
                 Console.WriteLine("App 7");
                 Countdown.Init();
+                break;
+            case 8:
+                Console.WriteLine("App 8");
+                Games.ManticoreHunt.HuntingManticore.Init();
                 break;
                 
             default:
