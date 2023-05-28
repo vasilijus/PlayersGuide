@@ -65,7 +65,7 @@ class HuntingManticore
             if(shot == manticoreDistance) 
                 manticoreLife -= damage;
 
-            if(manticoreLife == 0) {
+            if(manticoreLife <= 0) {
                 GameWon = true;
                 StillPlaying = false;
             }
