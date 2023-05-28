@@ -72,15 +72,17 @@ class HuntingManticore
                 StillPlaying = false;
             }
 
-            round++;
-            cityLife--;
+            if(manticoreLife>0) {
+                round++;
+                cityLife--;
+            }
         }
 
 
         if (GameWon)
-           return "Congrats";
+           return "Congrats, you've found and killed the Manticore.";
         else 
-            return "Game Over";
+            return "Game Over. Your City was destroyed.";
         
     }
 
