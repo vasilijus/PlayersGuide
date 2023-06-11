@@ -5,8 +5,10 @@ class SimulasTest
 {
     public static void Init() {
         string[] exit = {"q","quit", "end"};
+        bool quit = false;
+
         Console.WriteLine("Part 2 - Simulas Test");
-        IsLocked chest = IsLocked.Locked;
+        ChestState chest = ChestState.Locked;
 
         while()
 
