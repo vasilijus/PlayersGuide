@@ -1,5 +1,6 @@
 ﻿using System;
 using App1.Part_1;
+using App1.Part_2;
 using App1.Part_1.Progi;
 using App1.Part_1.Games.ManticoreHunt;
 namespace App1;
@@ -22,17 +23,18 @@ class Program {
                 break;
             
             case 2:
-                Console.WriteLine("App 2");
-                // EvenOrOdd.Init();
+                Console.WriteLine("Part 2 - OOP");
+                PartTwo p2Advance = new PartTwo();
+                p2Advance.Selection();
                 break;
                 
             case 3:
-                Console.WriteLine("App 3");
-                BuyingInventory.Init();
+                Console.WriteLine("Part 3 - Advanced Topics");
+
                 break;
             case 4:
-                Console.WriteLine("App 4");
-                BuyingInventory.Init();
+                Console.WriteLine("Part 4 - The End Game");
+
                 break;
                 
             default:
