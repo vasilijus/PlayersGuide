@@ -3,7 +3,6 @@
 
 enum ChestState {
     Lock,
-    Unlock,
     Close,
     Open
 }

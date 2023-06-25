@@ -1,6 +1,7 @@
 ﻿using System;
 
 // using App1.Part_2.Games.ManticoreHunt;
+using App1.Part_2.Progi;
 namespace App1.Part_2;
 
 class PartTwo {
@@ -26,7 +27,8 @@ class PartTwo {
                 break;
             
             case 2:
-                Console.WriteLine("PartTwo - App 2");
+                Console.WriteLine("PartTwo - App 2 - Chest Simulator");
+                SimulasTest.Init();
                 break;
                 
             default:
