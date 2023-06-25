@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace App1.Part_2.Progi;
+// 1. Enums
 class SimulasTest
 {
     public static void Init() {

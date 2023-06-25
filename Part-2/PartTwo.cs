@@ -30,6 +30,11 @@ class PartTwo {
                 Console.WriteLine("PartTwo - App 2 - Chest Simulator");
                 SimulasTest.Init();
                 break;
+            
+            case 3:
+                Console.WriteLine("PartTwo - App 2 - Tuples");
+                Tuples.Init();
+                break;
                 
             default:
                 Console.WriteLine("PartTwo - Exiting...");
