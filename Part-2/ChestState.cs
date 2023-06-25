@@ -1,7 +1,8 @@
 ﻿namespace App1.Part_2;
 
 
-enum ChestState {
+enum ChestState : Byte 
+{
     Lock,
     Close,
     Open
