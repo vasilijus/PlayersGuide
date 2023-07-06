@@ -10,7 +10,7 @@ class Program {
 
         Console.WriteLine("Enter Number: .. ");
         Console.WriteLine("\n ");
-        Console.WriteLine("From 1-4 ");
+        Console.WriteLine("Select: \n1. Part - Basics \n2. Part Advanced \n3. Part Master. \n4. Part 4. ");
 
         int selection = Convert.ToInt32(Console.ReadLine());
 

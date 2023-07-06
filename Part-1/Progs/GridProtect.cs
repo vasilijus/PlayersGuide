@@ -20,7 +20,9 @@ class GridProtect
 
         int valA = 0;
         int valB = 0;
+        Console.WriteLine("Enter the 1 number");
         valA = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the 2 number");
         valB = Convert.ToInt32(Console.ReadLine());
         var items = getSides(valA, valB);
 
