@@ -4,8 +4,10 @@ namespace App1.Part_2.Progi;
 // 1. Enums
 class Tuples
 {
-    public static void Init() {
-        
+    public string[] ingredients = new string[4]{"musgroom", "chicken", "carrots", "potatoes"};
+
+    public static void Init()
+    {
         (string Name, int Score, int Level) score = GetScore();
         DisplayScore(score);
 
@@ -15,6 +17,11 @@ class Tuples
         {
             Console.WriteLine($"Name {score.N} , Score: {score.S}, Level: {score.L}");
         }
+    }
+
+    public static void SimulaSoup()
+    {
+            Console.WriteLine($"Soup Types");
     }
 
     

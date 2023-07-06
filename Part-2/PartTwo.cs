@@ -6,7 +6,9 @@ namespace App1.Part_2;
 
 class PartTwo {
     public void Selection() {
-        string[] apps = new string[7]{ "Grid Protect", "Even Or Odd", "Inventory", "Replicator", "Taking Number", "Countdown", "Hunting Manticore"};
+        Console.Clear();
+
+        string[] apps = new string[3]{ "Colored Console", "Simula Test","Tuples"};
         int index = 1;
         Console.WriteLine("Part 2.");
         Console.WriteLine("");
