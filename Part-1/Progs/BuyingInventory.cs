@@ -6,6 +6,7 @@ class BuyingInventory
     public static void Init() {
 
         Console.WriteLine(" \n1 - Rope, \n2 - Torches, \n3 - Climbing Equipment, \n4 - Clean Water, \n5 - Machete, \n6 - Canoe, \n7 - Food Supplies \n");
+        Console.WriteLine("Enter the number to find the item price");
         int choice = Convert.ToInt32(Console.ReadLine());
         string response;
 

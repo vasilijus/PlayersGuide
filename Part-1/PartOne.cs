@@ -5,7 +5,7 @@ namespace App1.Part_1;
 
 class PartOne {
     public void Selection() {
-        string[] apps = new string[7]{ "Grid Protect", "Even Or Odd", "Inventory", "Replicator", "Taking Number", "Countdown", "Hunting Manticore"};
+        string[] apps = new string[8]{ "Grid Protect", "Even Or Odd", "Inventory", "Replicator", "Taking Number", "MagicCannon", "Countdown", "Hunting Manticore"};
         int index = 1;
         Console.WriteLine("Part 1.");
         Console.WriteLine("");
@@ -37,19 +37,19 @@ class PartOne {
                 break;
             case 4:
                 Console.WriteLine("PartOne - App 4");
-                BuyingInventory.Init();
+                ReplicatorOfDto.Init();
                 break;
             case 5:
                 Console.WriteLine("PartOne - App 5");
-                ReplicatorOfDto.Init();
+                TakingANumber.Start();
                 break;
             case 6:
                 Console.WriteLine("PartOne - App 6");
-                TakingANumber.Start();
+                Countdown.Init();
                 break;
             case 7:
                 Console.WriteLine("PartOne - App 7");
-                Countdown.Init();
+                MagicCannon.Init();
                 break;
             case 8:
                 Console.WriteLine("PartOne - App 8");
