@@ -43,7 +43,7 @@ class PartTwo {
             case 3:
                 Console.WriteLine("PartTwo - App 2 - Tuples");
                 Tuples.Init();
-                Tuples.SimulaSoup();
+                SimulasSoup.Init();
                 break;
                 
             default:

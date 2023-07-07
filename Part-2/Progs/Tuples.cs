@@ -17,11 +17,5 @@ class Tuples
         }
     }
 
-    public static void SimulaSoup()
-    {
-            Console.WriteLine($"Soup Types");
-    }
-
-    
 }
 

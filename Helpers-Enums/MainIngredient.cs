@@ -1,6 +1,6 @@
 ﻿namespace App1.Helpers;
 
-enum FoodIngredient : Byte 
+enum MainIngredient : Byte 
 {
     mushroom,
     chicken,

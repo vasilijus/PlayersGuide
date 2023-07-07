@@ -1,6 +1,6 @@
 ﻿namespace App1.Helpers;
 
-enum FoodType : Byte 
+enum SoupType 
 {
     soup,
     stew,
