@@ -1,5 +1,5 @@
 ﻿using System;
-
+using App1.Helpers;
 namespace App1.Part_2.Progi;
 // 1. Enums
 class SimulasTest

@@ -1,5 +1,4 @@
-﻿namespace App1.Part_2;
-
+﻿namespace App1.Helpers;
 
 enum ChestState : Byte 
 {

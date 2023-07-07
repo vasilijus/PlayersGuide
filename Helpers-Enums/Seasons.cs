@@ -1,4 +1,3 @@
-﻿namespace App1.Part_2;
-
+﻿namespace App1.Helpers;
 
 enum Season { Winter, Spring, Summer, Fall }

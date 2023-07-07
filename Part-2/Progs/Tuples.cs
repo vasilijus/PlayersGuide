@@ -4,8 +4,6 @@ namespace App1.Part_2.Progi;
 // 1. Enums
 class Tuples
 {
-    public string[] ingredients = new string[4]{"musgroom", "chicken", "carrots", "potatoes"};
-
     public static void Init()
     {
         (string Name, int Score, int Level) score = GetScore();

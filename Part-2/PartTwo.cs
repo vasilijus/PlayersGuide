@@ -1,4 +1,5 @@
 ﻿using System;
+using App1.Helpers;
 
 // using App1.Part_2.Games.ManticoreHunt;
 using App1.Part_2.Progi;
@@ -42,6 +43,7 @@ class PartTwo {
             case 3:
                 Console.WriteLine("PartTwo - App 2 - Tuples");
                 Tuples.Init();
+                Tuples.SimulaSoup();
                 break;
                 
             default:
