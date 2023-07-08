@@ -10,7 +10,7 @@ class PartTwo {
     public void Selection() {
         Console.Clear();
 
-        string[] apps = new string[5]{ "Colored Console Solstice", "Simula Test","Tuples", "SimulaSoup", "Arrow"};
+        string[] apps = new string[6]{ "Colored Console Solstice", "Simula Test","Tuples", "SimulaSoup", "Arrow", "GetterSetter"};
         int index = 1;
         Console.WriteLine("Part 2.");
         Console.WriteLine("");
@@ -56,6 +56,11 @@ class PartTwo {
                 Archery archery = new Archery();
                 Arrow arrow = archery.BuyArrow();
                 arrow.GetCost();
+                break;  
+            
+            case 6:
+                Console.WriteLine("PartTwo - App 2 - GetterSetter");
+                GetterSetter gs = new GetterSetter();
                 break;  
 
             default:
