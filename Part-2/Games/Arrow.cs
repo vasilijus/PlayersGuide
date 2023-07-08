@@ -5,9 +5,9 @@ namespace App1.Part_2.Games;
 
 class Arrow
 {
-    public ArrowheadType _arrowHead;
-    public ArrowfletchingType _fletching;
-    public float _length;
+    private ArrowheadType _arrowHead;
+    private ArrowfletchingType _fletching;
+    private float _length;
 
     // public Arrow()
     // {
@@ -31,6 +31,44 @@ class Arrow
         Console.WriteLine($"{_arrowHead} {_fletching} {_length}");
         return true;
     }
+
+    public ArrowheadType GetHeadType() => _arrowHead;
+    public ArrowfletchingType GetFletchingType() => _fletching;
+    public float GetShaftLength() => _length;
+
+    public void SetHeadType()
+    {
+        Console.WriteLine("Arrowhead Types: plastic, goose, turkey");
+        string select = Console.ReadLine().ToLower();
+        _arrowHead = select switch
+        {
+            "wood" => ArrowheadType.Wood,
+            "plastic" => ArrowheadType.Plastic,
+            "metal" => ArrowheadType.Metal
+        };
+    } 
+    public void SetFletchingType()
+    {
+        Console.WriteLine("Arrowhead Types: plastic, goose, turkey");
+        string select = Console.ReadLine().ToLower();
+        _fletching = select switch
+        {
+            "plastic" => ArrowfletchingType.Plastic,
+            "goose" => ArrowfletchingType.GooseFeather,
+            "turkey" => ArrowfletchingType.TurkeyFeather
+        };
+    }
+    public void SetShaftLength()
+    {
+        float length = 0;
+
+        while(length < 60 || length > 100)
+        {
+            Console.Write("Arrow length (between 60 and 100): ");
+            length = Convert.ToSingle(Console.ReadLine());
+        }
+    }
+
     public float GetCost()
     {
         float arrowHeadCost = _arrowHead switch
