@@ -13,19 +13,32 @@ class GetterSetter
 
 public class Rectangle
 {
-    private float _width;
-    private float _height;
+    public float Width { get; set; }
+    public float Height { get; set; }
+    public float Area => Height * Width;
+    // public float GetArea() => _width * _height;
+    // public float GetWidth() => _width;
+    // public float GetHeight() => _height;
+    // public void SetWidth(float width) => _width = width;
+    // public void SetHeight(float height) => _height = height;
 
     public Rectangle(float width, float height)
     {
-        _width = width;
-        _height = height;
+        Width = width;
+        Height = height;
     }
 
-    public float GetWidth() => _width;
-    public float GetHeight() => _height;
-    public float GetArea() => _width * _height;
 
-    public void SetWidth(float width) => _width = width;
-    public void SetHeight(float height) => _height = height;
+}
+
+public class Player
+{
+    public string Name { get; } = "Player 1"; // Can only assign on constructor
+    // OR do readonly
+    // public readonly string _name;
+
+    public Player(string name)
+    {
+        Name = name;
+    }
 }
