@@ -3,13 +3,14 @@ using App1.Helpers;
 
 // using App1.Part_2.Games.ManticoreHunt;
 using App1.Part_2.Progi;
+using App1.Part_2.Games;
 namespace App1.Part_2;
 
 class PartTwo {
     public void Selection() {
         Console.Clear();
 
-        string[] apps = new string[3]{ "Colored Console", "Simula Test","Tuples"};
+        string[] apps = new string[5]{ "Colored Console Solstice", "Simula Test","Tuples", "SimulaSoup", "Arrow"};
         int index = 1;
         Console.WriteLine("Part 2.");
         Console.WriteLine("");
@@ -43,9 +44,20 @@ class PartTwo {
             case 3:
                 Console.WriteLine("PartTwo - App 2 - Tuples");
                 Tuples.Init();
-                SimulasSoup.Init();
                 break;
                 
+            case 4:
+                Console.WriteLine("PartTwo - App 2 - Soup");
+                SimulasSoup.Init();
+                break;
+
+            case 5:
+                Console.WriteLine("PartTwo - App 2 - Arrow");
+                Archery archery = new Archery();
+                Arrow arrow = archery.BuyArrow();
+                arrow.GetCost();
+                break;  
+
             default:
                 Console.WriteLine("PartTwo - Exiting...");
                 break;

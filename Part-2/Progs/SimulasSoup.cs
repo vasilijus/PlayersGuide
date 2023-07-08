@@ -31,7 +31,7 @@ class SimulasSoup
 
     static SoupType GetSoupType()
     {
-        Console.WriteLine("Soup Types: soup, stew, gumbo.");
+        Console.WriteLine("Soup Types: \n1.soup, 2.stew, 3.gumbo.");
         string input = Console.ReadLine();
         return input switch
         {
@@ -44,7 +44,7 @@ class SimulasSoup
 
     static MainIngredient GetIngredient()
     {
-        Console.WriteLine("Soup Main Ingredient: chicken, carrot, mushroom, potatoes.");
+        Console.WriteLine("Soup Main Ingredient: \n1.chicken, 2.carrot, 3.mushroom, 4.potatoes.");
         string input = Console.ReadLine();
         return input switch
         {
@@ -58,7 +58,7 @@ class SimulasSoup
 
     static FoodSeasoning GetSeasoning()
     {
-        Console.WriteLine("Soup Seasining: hot, salty, sweet.");
+        Console.WriteLine("Soup Seasining: \n1.hot, 2.salty, 3.sweet.");
         string input = Console.ReadLine();
         return input switch
         {
