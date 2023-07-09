@@ -9,7 +9,7 @@ class Countdown
     //</summary>
     public static void Init()
     {
-        int number = Convert.ToInt32(Console.ReadLine());
+        int number = int.Parse(Console.ReadLine());
         AskForNumber(number);
     }
 

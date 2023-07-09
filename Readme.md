@@ -124,3 +124,71 @@ string message = MightReturnNullIfNegative(+10)!;
 ### L23 DESIGNING THE SOFTWARE
 UML
 CRC Cards
+
+### L29 Records
+Using - with to create a copy of an object
+```c#
+// Point(X, Y)
+Point p1 = new Point(1,2)
+Point p2 = p1 with {X = 5}
+Point p3 = p1 with {X = 4, Y = 3}
+```
+
+### L30 Generics
+Define a generic class
+```c#
+public class List<T>
+{
+    private T[] _items = new T[0];
+    public T GetItemAt(int index) => _items[index];
+    public void SetItemAt(int index, T value) => _items[index] = value;
+
+    public void Add(T newVal)
+    {
+        T[] updated = new T[_items.Length+1];
+        for(int index = 0; index < _items.Length; index++)
+            updated[index] = _items[index];
+        
+        updated[^1] = newVal;
+
+        _items = updated;
+    }
+}
+```
+
+```c#
+public abstract class GameObject
+{
+public int ID { get; }
+// ...
+}
+```
+```c#
+public class IDList<T> 
+{
+    private T[] items = new T[0];
+}
+```
+```c#
+public class IDList<T> where T : GameObject
+{
+    private T[] items = new T[0];
+
+    public T? GetItemByID(int idToFind)
+    {
+        foreach (T item in items)
+            if (item.ID == idToFind)
+                return item;
+        
+        return null;
+    }
+    public void Add(T newValue) { /* ... */ }
+}
+```
+If there are several type parameters, you can constrain each of them with their own where:
+```c#
+public class GenericType<T, U>  where T : GameObject
+                                where U : Asteroid
+{// ...
+}
+```
