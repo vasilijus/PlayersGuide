@@ -35,7 +35,7 @@ class Arrow
     public ArrowheadType GetHeadType() => ArrowHead;
     public ArrowfletchingType GetFletchingType() => Fletching;
     public float GetShaftLength() => Length;
-    
+
 
     public float GetCost()
     {
@@ -59,4 +59,5 @@ class Arrow
         
         return totalPrice;
     }
+
 }
