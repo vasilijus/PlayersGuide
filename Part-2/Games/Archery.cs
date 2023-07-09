@@ -11,7 +11,8 @@ class Archery
     public Arrow BuyArrow()
     {
         Console.WriteLine("Best Choices: 1.Predefined , 2.Custom \nEnter anumber.. ");
-        string choice = Console.ReadLine();
+        // Null checks on - string choice
+        string? choice = Console.ReadLine();
         return choice.ToLower() switch
         {
             "1" => GetPredefinedArrow(),
@@ -23,7 +24,7 @@ class Archery
     private Arrow GetPredefinedArrow()
     {
         Console.WriteLine("Best Choices: 1.Elite , 2.Beginner, 3.Marksman \nEnter anumber.. ");
-        string input = Console.ReadLine();
+        string? input = Console.ReadLine();
         return input switch
         {
             "1" => Archery.CreateEliteArrow(),

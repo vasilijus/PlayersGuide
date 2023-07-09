@@ -10,7 +10,7 @@ class PartTwo {
     public void Selection() {
         Console.Clear();
 
-        string[] apps = new string[6]{ "Colored Console Solstice", "Simula Test","Tuples", "SimulaSoup", "Arrow", "GetterSetter"};
+        string[] apps = new string[7]{ "Colored Console Solstice", "Simula Test","Tuples", "SimulaSoup", "Arrow", "GetterSetter", "AsteroidsGame"};
         int index = 1;
         Console.WriteLine("Part 2.");
         Console.WriteLine("");
@@ -61,6 +61,12 @@ class PartTwo {
             case 6:
                 Console.WriteLine("PartTwo - App 2 - GetterSetter");
                 GetterSetter gs = new GetterSetter();
+                break;  
+
+            case 7:
+                Console.WriteLine("PartTwo - App 2 - AsteroidsGame");
+                AsteroidsGame game = new AsteroidsGame();
+                game.Run();
                 break;  
 
             default:
