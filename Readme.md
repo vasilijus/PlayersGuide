@@ -134,6 +134,8 @@ Point p2 = p1 with {X = 5}
 Point p3 = p1 with {X = 4, Y = 3}
 ```
 
+### L24 Stop 191
+
 ### L30 Generics
 Define a generic class
 ```c#

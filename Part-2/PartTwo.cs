@@ -74,6 +74,16 @@ class PartTwo {
                 TicTacToe ttt1 = new TicTacToe();
                 break;
 
+            case 9:
+                Console.WriteLine("PartTwo - Game 2 - List");
+                List<int> numbers = new List<int>();
+                numbers.Add(1);
+                numbers.Add(11);
+                numbers.Add(125);
+                Console.WriteLine(numbers[1]);
+                Console.WriteLine($"Position: {numbers.BinarySearch(125)}");
+                break;
+
             default:
                 Console.WriteLine("PartTwo - Exiting...");
                 break;
