@@ -8,6 +8,15 @@ class GetterSetter
     public GetterSetter()
     {
         Console.WriteLine("Getter Setter");
+        Rectangle rectangle = new Rectangle(2,4);
+        Console.WriteLine(rectangle.Area);
+        // Circle circle = new Circle();
+        // circle.Radius = 5;
+        // circle.X = -3;
+        // C# provides - object initializer syntax , when initializing object
+        Circle circle = new Circle() { Radius = 5, X = -3 };
+        // Or because - get; init; , we can do
+        Circle circle2 = new Circle { Radius = 4, X = -2, Y = 3 }; 
     }
 }
 
@@ -41,4 +50,11 @@ public class Player
     {
         Name = name;
     }
+}
+
+public class Circle
+{
+    public float X { get; init; }
+    public float Y { get; init; }
+    public float Radius { get; init; } = 0;
 }
