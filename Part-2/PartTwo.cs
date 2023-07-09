@@ -52,11 +52,11 @@ class PartTwo {
                 break;
 
             case 5:
-                Console.WriteLine("PartTwo - App 2 - Arrow");
+                Console.WriteLine("PartTwo - Game 2 - Arrow");
                 Archery archery = new Archery();
                 Arrow arrow = archery.BuyArrow();
                 arrow.GetCost();
-                break;  
+                break;
             
             case 6:
                 Console.WriteLine("PartTwo - App 2 - GetterSetter");
@@ -64,10 +64,15 @@ class PartTwo {
                 break;  
 
             case 7:
-                Console.WriteLine("PartTwo - App 2 - AsteroidsGame");
+                Console.WriteLine("PartTwo - Game 2 - AsteroidsGame");
                 AsteroidsGame game = new AsteroidsGame();
                 game.Run();
-                break;  
+                break;
+
+            case 8:
+                Console.WriteLine("PartTwo - Game 2 - TicTacToe");
+                TicTacToe ttt1 = new TicTacToe();
+                break;
 
             default:
                 Console.WriteLine("PartTwo - Exiting...");
