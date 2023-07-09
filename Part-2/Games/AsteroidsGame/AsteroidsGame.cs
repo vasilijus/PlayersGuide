@@ -4,7 +4,9 @@ namespace App1.Part_2.Games;
 
 class AsteroidsGame
 {
+    public static AsteroidsGame Current { get; set; }
     public Asteroid[] _asteroids;
+    internal IEnumerable<Asteroid> Asteroids;
 
     public AsteroidsGame()
     {
@@ -23,21 +25,21 @@ class AsteroidsGame
 
     public void Run()
     {
-       Console.WriteLine("Run Game");
-       while (true)
-       {
-        foreach (var asteroid in _asteroids)
+        Console.WriteLine("Run Game");
+        while (true)
         {
-            asteroid.Update();
+            foreach (var asteroid in _asteroids)
+            {
+                asteroid.Update();
+            }
         }
-       }
     }
 }
 
 public class Asteroid
 {
-    public float PosX { get; private set; }
-    public float PosY { get; private set; }
+    public float PosX { get; set; }
+    public float PosY { get; set; }
     public float VelocityX { get; private set; }
     public float VelocityY { get; private set; }
 
