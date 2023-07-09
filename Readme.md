@@ -41,7 +41,57 @@ _ => "Apologies. I do not know that one."
 };
 Console.WriteLine(response);
 ```
+### L12 Array
+multi-dimensional arrays or rectangular arrays
+```c#
+int[][] matrix = new int[3][];
+matrix[0] = new int[] { 1, 2 };
+matrix[1] = new int[] { 3, 4 };
+matrix[2] = new int[] { 5, 6 };
+Console.WriteLine(matrix[0][1]); // Should be 2.
+```
 
+```c#
+int[,] matrix = new int[3, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+Console.WriteLine(matrix[0, 1]);
+```
+
+### L17 Tuples
+Creating 
+```c#
+(string, int, int) score = ("R2-D2", 124220, 11);
+// Or
+var score = ("R2-D2", 124220, 11);
+Console.WriteLine($"Name:{score.Item1} Level:{score.Item3} Score:{score.Item2}");
+```
+
+```c#
+(string Name, int Points, int Level)[] CreateHighScores()
+{
+    return new (string, int, int)[3] {
+        ("R2-D2", 12420, 15),
+        ("C-3PO", 8543, 9),
+        ("GONK",-1, 1),
+    };
+}
+```
+Deconstructing
+```c#
+var score = (Name: "R2-D2", Points: 12420, Level: 15);
+string playerName = score.Name;
+```
+
+```c#
+string name;
+int points;
+int level;
+(name, points, level) = score;
+Console.WriteLine($"{name} reached level {level} with {points} points.");
+```
+Ignoring Elements with Discards
+```c#
+(string name, int points, _) = score;
+```
 
 ### L22 NULL REFERENCES 
 
