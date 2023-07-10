@@ -126,6 +126,13 @@ class PartTwo {
                 }
                 break;
 
+            case 13:
+                Console.WriteLine("PartTwo - Game 2 - Password validator");
+                
+                PassValidator pv1 = new PassValidator("123Pass!");
+                PassValidator pv2 = new PassValidator("123Pass");
+                break;
+
             default:
                 Console.WriteLine("PartTwo - Exiting...");
                 break;
