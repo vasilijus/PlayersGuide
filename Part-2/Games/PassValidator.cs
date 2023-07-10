@@ -2,68 +2,48 @@ using App1.Helpers;
 
 class PassValidator
 {
-    private bool valid = true;
-    private string msg = "";
-    private string[] vDecreed = new string[] {"&", "T"}; 
-    public PassValidator(string password)
+    public bool IsValid(string password)
     {
-        ValidateDecreed(password);
-        ValidateLength(password);
-        ValidateAllTypes(password);
-        if (valid) 
-            Console.WriteLine($"Password: {password} is valid");
-        else {
-            Console.WriteLine($"Password: {password} is invalid");
-            Console.WriteLine($"Error: {msg}");
-        }
+        if (password.Length < 6) return false;
+        if (password.Length > 13) return false;
+        if (!HasUppercase(password)) return false;
+        if (!HasLowercase(password)) return false;
+        if (!HasDigits(password)) return false;
+        if (Contains(password, 'T')) return false;
+        if (Contains(password, '&')) return false;
+
+        return true;
     }
 
-    public void ValidateDecreed(string input)
+    private bool HasUppercase(string password)
     {
-        foreach(string item in vDecreed)
-        {
-            foreach(char letter in input)
-            {
-                Console.WriteLine($"Is {item} == {letter}");
-                if(char.Parse(item) == letter) {
-                    Console.WriteLine("True");
-                    valid = true;
-                    msg += "Contains decreed letter.";
-                }
-                else {
-                    Console.WriteLine("False");
-                    valid = false;
-                }
-            }
-        }
+        foreach (char letter in password)
+            if (char.IsUpper(letter)) return true;
+
+        return false;
     }
 
-    public void ValidateLength(string input)
+    private bool HasLowercase(string password)
     {
-        if (input.Length < 6 || input.Length > 13) {
-            valid = false;
-            msg += "Must be between 6 - 13.";
-        }
+        foreach (char letter in password)
+            if (char.IsLower(letter)) return true;
+
+        return false;
     }
 
-    public void ValidateAllTypes(string input)
+    private bool HasDigits(string password)
     {
-        bool isLower    = false;
-        bool isUpper    = false;
-        bool isSpecial  = false;
-        bool isNumber   = false;
-        foreach(char letter in input)
-        {
-            if(!isLower)
-                if(char.IsLower(letter)) isLower = true;
-            if(!isUpper)
-                if(char.IsUpper(letter)) isLower = true;
-            if(!isSpecial)
-                if(char.IsNumber(letter)) isLower = true;
-            if(!isNumber)
-                if(char.IsSymbol(letter)) isLower = true;
-            Console.WriteLine($"Missing lowercase:{!isLower}, upper:{!isUpper}, number:{!isNumber}, special:{!isSpecial}");
-        }
-        if(!isLower || !isUpper || !isSpecial || !isNumber ) valid = false;
+        foreach (char letter in password)
+            if (char.IsDigit(letter)) return true;
+
+        return false;
+    }
+
+    private bool Contains(string password, char letter)
+    {
+        foreach (char character in password)
+            if (character == letter) return true;
+
+        return false;
     }
 }

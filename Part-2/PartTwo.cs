@@ -129,8 +129,12 @@ class PartTwo {
             case 13:
                 Console.WriteLine("PartTwo - Game 2 - Password validator");
                 
-                PassValidator pv1 = new PassValidator("123Pass!");
-                PassValidator pv2 = new PassValidator("123Pass");
+                PassValidator pv1 = new PassValidator();
+                bool b1 = pv1.IsValid("Pass1!");
+                Console.WriteLine($"Password {b1}");
+                PassValidator pv2 = new PassValidator();
+                bool b2 = pv1.IsValid("Pass1");
+                Console.WriteLine($"Password {b2}");
                 break;
 
             default:
