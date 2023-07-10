@@ -89,6 +89,42 @@ class PartTwo {
                 Console.WriteLine(numbers[1]);
                 Console.WriteLine($"Position: {numbers.BinarySearch(125)}");
                 break;
+            case 12:
+                Console.WriteLine("PartTwo - Game 2 - Cards");
+                Door door = new Door(0000);
+                int initialPasscode = GetInt("What will be the initial passcode?");
+                int GetInt(string text) {
+                    Console.Write($"{text} ");
+                    return int.Parse(Console.ReadLine());
+                }
+                while(true)
+                {
+                    Console.Write($"The door is {door.DoorState}. What do you want to do? (open, close, lock, unlock, change code) ");
+                    string command = Console.ReadLine();
+
+                    switch(command)
+                    {
+                        case "open":
+                            door.Open();
+                            break;
+                        case "close":
+                            door.Close();
+                            break;
+                        case "lock":
+                            door.Lock();
+                            break;
+                        case "unlock":
+                            int guess = GetInt("What is the passcode?");
+                            door.Unlock(guess);
+                            break;
+                        case "change code":
+                            int currentCode = GetInt("What is the current passcode?");
+                            int newCode = GetInt("What do you want to change it to?");
+                            door.ChangeCode(currentCode, newCode);
+                            break;
+                    }
+                }
+                break;
 
             default:
                 Console.WriteLine("PartTwo - Exiting...");
