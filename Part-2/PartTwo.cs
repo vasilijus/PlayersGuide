@@ -73,8 +73,14 @@ class PartTwo {
                 Console.WriteLine("PartTwo - Game 2 - TicTacToe");
                 TicTacToe ttt1 = new TicTacToe();
                 break;
-
+            
             case 9:
+                Console.WriteLine("PartTwo - Game 2 - Cards");
+                GenerateCards gcards = new GenerateCards();
+                gcards.ShowCards();
+                break;
+            
+            case 11:
                 Console.WriteLine("PartTwo - Game 2 - List");
                 List<int> numbers = new List<int>();
                 numbers.Add(1);
