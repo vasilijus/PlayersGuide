@@ -16,27 +16,17 @@ class RockPaperScissors
     {
         // rock bet scissor
         if(p1 == 1 && p2 == 2){
-            Console.WriteLine($"Player {p2} won ");
+            Console.WriteLine($"Player player 2 - won ");
+        }
+        else if(p1 == 2 && p2 == 3){
+            Console.WriteLine($"Player player 2 - won ");
+        }
+        else if(p1 == 3 && p2 == 1){
+            Console.WriteLine($"Player player 2 - won ");
         }
         else
         {
-            Console.WriteLine($"Player {p1} won ");
-        }
-        
-        if(p1 == 2 && p2 == 3){
-            Console.WriteLine($"Player {p2} won ");
-        }
-        else
-        {
-            Console.WriteLine($"Player {p1} won ");
-        }
-
-        if(p1 == 3 && p2 == 1){
-            Console.WriteLine($"Player {p2} won ");
-        }
-        else
-        {
-            Console.WriteLine($"Player {p1} won ");
+            Console.WriteLine($"Player player 1 - won ");
         }
     }
 

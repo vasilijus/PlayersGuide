@@ -136,6 +136,12 @@ class PartTwo {
                 bool b2 = pv1.IsValid("Pass1");
                 Console.WriteLine($"Password {b2}");
                 break;
+                
+            case 14:
+                Console.WriteLine("PartTwo - Game 2 - RockPaperScissor");
+                RockPaperScissors rpc = new RockPaperScissors();
+                rpc.Draw();
+                break;
 
             default:
                 Console.WriteLine("PartTwo - Exiting...");
