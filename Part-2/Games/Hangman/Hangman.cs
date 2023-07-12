@@ -2,6 +2,7 @@ namespace App1.Part_2.Games;
 
 class Hangman
 {
+    private bool won = false;
     private int mistakes = 5;
     private char[] word = new char[0];
     private char[] guessWord = new char[0];
@@ -11,7 +12,7 @@ class Hangman
     {
         word = GetWord();
 
-        while(mistakes > 0)
+        while(mistakes > 0 || won == true)
         {
             char guessLetter = GuessLetter();
             bool letterInWord = CheckLetter(guessLetter);
@@ -21,7 +22,12 @@ class Hangman
                 wordOutput += item.ToString() + " ";
             } 
             Console.WriteLine($"Word: {wordOutput} | Remaining: {mistakes} | Incorrect: {incorectArr} | Guess: {guessLetter}");
+            
+            if (won) {
+                Console.WriteLine("Congrates You've WON!!!");
+            }
         }
+        Console.WriteLine("You've LOST!!!");
     }
 
     private char GuessLetter()
