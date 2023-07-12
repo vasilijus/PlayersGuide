@@ -143,6 +143,12 @@ class PartTwo {
                 rpc.Draw();
                 break;
 
+            case 15:
+                Console.WriteLine("PartTwo - Game 2 - Hangman");
+                new Hangman();
+                break;
+
+
             default:
                 Console.WriteLine("PartTwo - Exiting...");
                 break;

@@ -21,7 +21,7 @@ class RockPaperScissors
         }
     }
 
-    private Hand? GetHand(int player)
+    private Hand GetHand(int player)
     {
         Console.WriteLine($"Player {player} turn.");
         Console.WriteLine($"1.Rock, 2.Paper, 3.Scissor");
