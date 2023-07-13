@@ -71,7 +71,8 @@ class PartTwo {
 
             case 8:
                 Console.WriteLine("PartTwo - Game 2 - TicTacToe");
-                TicTacToe ttt1 = new TicTacToe();
+                // TicTacToe ttt1 = new TicTacToe();
+                new TicTacToe().Run();
                 break;
             
             case 9:
