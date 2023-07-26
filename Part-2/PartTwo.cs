@@ -153,6 +153,15 @@ class PartTwo {
                 Console.WriteLine("PartTwo - App 2 - Objects");
                 App1.Part_2.Objects.Basic.Test();
                 break;
+            case 17:
+                Console.WriteLine("PartTwo - App 2 - Inventory");
+                var backpack = new App1.Part_2.Objects.BackPack();
+                var sword = new App1.Part_2.Objects.Sword();
+                
+                var isAllowedToAdd = backpack.Add(sword);
+            Console.WriteLine($"Is allowd to add {isAllowedToAdd}");
+
+                break;
 
 
             default:
