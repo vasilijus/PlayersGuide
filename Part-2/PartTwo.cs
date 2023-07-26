@@ -149,6 +149,11 @@ class PartTwo {
                 new Hangman();
                 break;
 
+            case 16:
+                Console.WriteLine("PartTwo - App 2 - Objects");
+                App1.Part_2.Objects.Basic.Test();
+                break;
+
 
             default:
                 Console.WriteLine("PartTwo - Exiting...");
