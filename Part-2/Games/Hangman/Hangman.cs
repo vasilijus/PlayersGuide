@@ -16,11 +16,13 @@ class Hangman
         {
             char guessLetter = GuessLetter();
             bool letterInWord = CheckLetter(guessLetter);
+
+            var hasWon = checkIfWon();
             string wordOutput ="";
             foreach (char item in guessWord)
             {
                 wordOutput += item.ToString() + " ";
-            } 
+            }
             Console.WriteLine($"Word: {wordOutput} | Remaining: {mistakes} | Incorrect: {incorectArr} | Guess: {guessLetter}");
             
             if (won) {
@@ -36,6 +38,16 @@ class Hangman
         return letter;
     }
 
+    private bool checkIfWon()
+    {
+        var answer = new string(word);
+        var guess = new string(guessWord);
+        bool hasWon = (answer == guess) ? true : false;
+        Console.WriteLine($"Answer : {answer}, Guessed: {guess}. Won ? : {hasWon}");
+
+        return hasWon;
+    }
+
     private bool CheckLetter(char letter)
     {
         correct = false;
@@ -47,8 +59,10 @@ class Hangman
             }
         }
         
-        incorectArr += letter.ToString()+" ";
-        if(correct == false) mistakes++;
+        if(correct == false) {
+            incorectArr += letter.ToString()+" ";
+            mistakes--;
+        }
 
         return correct;
     }

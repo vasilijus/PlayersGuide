@@ -10,7 +10,7 @@ class PartTwo {
     public void Selection() {
         Console.Clear();
 
-        string[] apps = new string[]{ "Colored Console Solstice", "Simula Test","Tuples", "SimulaSoup", "Arrow", "GetterSetter", "AsteroidsGame"};
+        string[] apps = new string[]{ "Colored Console Solstice", "Simula Test","Tuples", "SimulaSoup", "Arrow", "GetterSetter", "AsteroidsGame", "14 Rock paper scissors", "15 Hangman"};
         int index = 1;
         Console.WriteLine("Part 2.");
         Console.WriteLine("");
