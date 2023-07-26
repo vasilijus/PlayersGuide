@@ -12,18 +12,19 @@ class Hangman
     {
         word = GetWord();
 
-        while(mistakes > 0 || won == true)
+        while (won != true || mistakes > 0)
         {
             char guessLetter = GuessLetter();
             bool letterInWord = CheckLetter(guessLetter);
 
-            var hasWon = checkIfWon();
             string wordOutput ="";
             foreach (char item in guessWord)
             {
                 wordOutput += item.ToString() + " ";
             }
             Console.WriteLine($"Word: {wordOutput} | Remaining: {mistakes} | Incorrect: {incorectArr} | Guess: {guessLetter}");
+            
+            if ( checkIfWon() ) won = true;
             
             if (won) {
                 Console.WriteLine("Congrates You've WON!!!");
@@ -40,12 +41,7 @@ class Hangman
 
     private bool checkIfWon()
     {
-        var answer = new string(word);
-        var guess = new string(guessWord);
-        bool hasWon = (answer == guess) ? true : false;
-        Console.WriteLine($"Answer : {answer}, Guessed: {guess}. Won ? : {hasWon}");
-
-        return hasWon;
+        return (new string(word) == new string(guessWord)) ? true : false;
     }
 
     private bool CheckLetter(char letter)
