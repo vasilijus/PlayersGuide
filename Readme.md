@@ -136,6 +136,61 @@ Point p3 = p1 with {X = 4, Y = 3}
 
 ### L24 Stop 191
 
+### L25 Object 
+```c#
+Let’s suppose GameObject has only this constructor:
+public GameObject(float positionX, float positionY,
+float velocityX, float velocityY)
+{
+PositionX = positionX; PositionY = positionY;
+VelocityX = velocityX; VelocityY = velocityY;
+}
+```
+Since there is no parameterless constructor to call, any constructors defined in Asteroid will
+need to specifically indicate that it is using this other constructor and supply arguments for its
+parameters:
+```c#
+public Asteroid() : base(0, 0, 0, 0)
+{
+}
+```
+It is relatively common to pass along parameters from the current constructor down to the
+base class’s constructor, so the following might be more common:
+
+```c#
+public Asteroid(float positionX, float positionY,
+float velocityX, float velocityY)
+: base(positionX, positionY, velocityX, velocityY)
+{
+}
+```
+
+#### Casting and Checking for Types
+```c#
+GameObject gameObject = new Asteroid();
+Asteroid asteroid = gameObject; // ERROR!
+```
+The gameObject variable can only guarantee that it has a GameObject. It might reference
+something more specific, like an Asteroid. In the above code, we know that’s true.
+By casting, we can get the computer to treat the object as the more specialized type:
+```c#
+GameObject gameObject = new Asteroid();
+Asteroid asteroid = (Asteroid)gameObject; // Use with caution.
+```
+
+Check if objects are correct 
+```c#
+if (gameObject.GetType() == typeof(Asteroid)) {...}
+```
+
+#### Sealed Classes ?
+```c# 
+// forbid others from deriving from a specific class
+public sealed class Asteroid : GameObject
+{
+// ...
+```
+
 ### L30 Generics
 Define a generic class
 ```c#
