@@ -5,71 +5,68 @@ using System.Threading.Tasks;
 
 namespace App1.Part_2.Objects;
 
-public class InventoryItem
+public class Pack
 {
-    public float Weigth { get; protected set; }
-    public float Volume {get; protected set;}
+    public int MaxCount { get; }
+    public float MaxVolume { get; }
+    public float MaxWeight { get; }
 
-    public InventoryItem(float weight, float volume)
+    private InventoryItem[] _items;
+    
+    public int CurrentCount { get; private set; }
+    public float CurrentVolume { get; private set; }
+    public float CurrentWeight { get; private set; }
+
+    public Pack(int maxCount, float maxVolume, float maxWeight)
     {
-        Weigth = weight;
-        Volume = volume;
-    }
-}
+        MaxCount = maxCount;
+        MaxVolume = maxVolume;
+        MaxWeight = maxWeight;
 
-public class Rope : InventoryItem
-{
-    public Rope() : base(1, 1) {}
-    // public float length { get; protected set; }
-}
-
-public class Sword : InventoryItem
-{
-    public Sword() : base(10, 4) {}
-
-}
-
-public class BackPack
-{
-    InventoryItem[] storedItems = new InventoryItem[10];
-    public float maxWeight;
-    public float maxVolume;
-
-    public BackPack()
-    {
-        maxWeight = 20;
-        maxVolume = 30;
+        _items = new InventoryItem[maxCount];
     }
 
     public bool Add(InventoryItem item)
     {
-        // if added item weight or volume exceeds
-        float currentTotalWeight = (storedItems != null && storedItems.Length > 0) ? ItemWeight(storedItems) : 0;
-            Console.WriteLine($"Total Weight now {currentTotalWeight}");
+        if (CurrentCount >= MaxCount) return false;
+        if (CurrentVolume + item.Volume > MaxVolume) return false;
+        if (CurrentWeight + item.Weight > MaxWeight) return false;
 
-        if(currentTotalWeight+item.Weigth > maxWeight) {
-            Console.WriteLine("Too heavy");
-            return false;
-        }
-        // init
-        InventoryItem[] newInventoryArr = new InventoryItem[storedItems.Length+1];
-        // set the values
-        newInventoryArr = storedItems.Concat(new InventoryItem[]{item}).ToArray();
-        // replace the old with new
-        storedItems = newInventoryArr;
-            Console.WriteLine("Item Added");
+        _items[CurrentCount] = item;
+        CurrentCount++;
+        CurrentVolume += item.Volume;
+        CurrentWeight += item.Weight;
         return true;
-    }
-
-    public float ItemWeight(InventoryItem[] sourceArr)
-    {
-        float weight=0;
-        foreach (InventoryItem item in sourceArr)
-        {
-            weight += item.Weigth;
-        }
-            Console.WriteLine($"Allowd Values w30 : {weight} ");
-        return weight;
     }
 }
 
+public class InventoryItem
+{
+    public float Weight { get; }
+    public float Volume { get; }
+
+    public InventoryItem(float weight, float volume)
+    {
+        Weight = weight;
+        Volume = volume;
+    }
+}
+
+public class Arrow : InventoryItem { 
+    public Arrow() : base(0.1f, 0.05f) { } 
+}
+public class Bow : InventoryItem {
+    public Bow() : base(1, 4) { } 
+}
+public class Rope : InventoryItem {
+    public Rope() : base(1, 1.5f) { } 
+}
+public class Water : InventoryItem {
+    public Water() : base(2, 3) { } 
+}
+public class Food : InventoryItem {
+    public Food() : base(1, 0.5f) { } 
+}
+public class Sword : InventoryItem {
+    public Sword() : base(5, 3) { }
+}

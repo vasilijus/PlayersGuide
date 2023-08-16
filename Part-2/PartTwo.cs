@@ -4,6 +4,9 @@ using App1.Helpers;
 // using App1.Part_2.Games.ManticoreHunt;
 using App1.Part_2.Progi;
 using App1.Part_2.Games;
+using App1.Part_2.Objects;
+// using Arrow = App1.Part_2.Objects.Arrow;
+
 namespace App1.Part_2;
 
 class PartTwo {
@@ -155,12 +158,35 @@ class PartTwo {
                 break;
             case 17:
                 Console.WriteLine("PartTwo - App 2 - Inventory");
-                var backpack = new App1.Part_2.Objects.BackPack();
-                var sword = new App1.Part_2.Objects.Sword();
                 
-                var isAllowedToAdd = backpack.Add(sword);
-            Console.WriteLine($"Is allowd to add {isAllowedToAdd}");
+                Pack pack = new Pack(10, 20, 30);
 
+                while (true)
+                {
+                Console.WriteLine($"Pack is currently at {pack.CurrentCount}/{pack.MaxCount} items, {pack.CurrentWeight}/{pack.MaxWeight} weight, and {pack.CurrentVolume}/{pack.MaxVolume} volume.");
+
+                Console.WriteLine("What do you want to add?");
+                Console.WriteLine("1 - Arrow");
+                Console.WriteLine("2 - Bow");
+                Console.WriteLine("3 - Rope");
+                Console.WriteLine("4 - Water");
+                Console.WriteLine("5 - Food");
+                Console.WriteLine("6 - Sword");
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                InventoryItem newItem = choice switch
+                {
+                    1 => new Bow(),
+                    2 => new Bow(),
+                    3 => new Rope(),
+                    4 => new Water(),
+                    5 => new Food(),
+                    6 => new Sword()
+                };
+
+                if (!pack.Add(newItem))
+                    Console.WriteLine("Could not add this to the pack.");
+                }
                 break;
 
 
