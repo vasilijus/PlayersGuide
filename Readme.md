@@ -191,6 +191,20 @@ public sealed class Asteroid : GameObject
 // ...
 ```
 
+### L26 Polymorphism
+#### Virtual
+Not every method can leverage polymorphism. A method must indicate it is allowed by placing the *virtual* keyword on it, giving permission to derived classes to replace it.
+
+#### New Methods
+```c#
+public class Base
+{ public int Method() => 0; }
+public class Derived : Base
+{ public newint Method() => 4; }
+```
+
+
+
 ### L30 Generics
 Define a generic class
 ```c#

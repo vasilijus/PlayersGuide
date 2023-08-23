@@ -38,6 +38,15 @@ public class Pack
         CurrentWeight += item.Weight;
         return true;
     }
+
+    public void ToString()
+    {
+        Console.WriteLine("Pack containing: ");
+        foreach (InventoryItem item in _items)
+        {
+            Console.Write(item);
+        }
+    } 
 }
 
 public class InventoryItem
@@ -52,14 +61,15 @@ public class InventoryItem
     }
 }
 
-public class Arrow : InventoryItem { 
-    public Arrow() : base(0.1f, 0.05f) { } 
-}
+// public class Arrow : InventoryItem { 
+//     public Arrow() : base(0.1f, 0.05f) { } 
+// }
 public class Bow : InventoryItem {
     public Bow() : base(1, 4) { } 
 }
 public class Rope : InventoryItem {
-    public Rope() : base(1, 1.5f) { } 
+    public Rope() : base(1, 1.5f) { }
+    public new string ToString() => "Rope";
 }
 public class Water : InventoryItem {
     public Water() : base(2, 3) { } 
